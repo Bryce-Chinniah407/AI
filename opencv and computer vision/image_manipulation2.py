@@ -16,6 +16,11 @@ plt.imshow(gray_scale, cmap='gray')
 plt.title('Gray-scale image')
 plt.show()
 
+gray_scale = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+plt.imshow(gray_scale)
+plt.title('Grayscale image')
+plt.show()
+
 hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 plt.imshow(hsv_image)
 plt.title("Hsv image")
