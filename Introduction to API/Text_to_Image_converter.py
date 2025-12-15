@@ -5,7 +5,7 @@ from io import BytesIO
 API_URL = "https://router.huggingface.co/hf-inference/models/stabilityai/stable-diffusion-3-medium-diffusers"
 
 def generate_image_from_text(prompt: str) -> Image.Image:
-    headers = {"Authorization": f"Bearer API_TOKEN"}
+    headers = {"Authorization": f"Bearer API_KEY_HERE"}
     payload = {"inputs": prompt}
 
     try:
