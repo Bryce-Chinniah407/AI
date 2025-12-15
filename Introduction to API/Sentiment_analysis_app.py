@@ -3,7 +3,7 @@ import requests
 api_url = "https://router.huggingface.co/hf-inference/models/distilbert/distilbert-base-uncased-finetuned-sst-2-english"
 
 headers = {
-    "Authorization": "Bearer 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"
+    "Authorization": "Bearer API_KEY_HERE"
 }
 
 text = input("Enter a sentence about something: ")
