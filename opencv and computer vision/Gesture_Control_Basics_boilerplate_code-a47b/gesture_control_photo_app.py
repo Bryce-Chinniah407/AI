@@ -43,12 +43,4 @@ while True:
             mp_draw.drw_landmarks(img, hand, mp_hands.HAND_CONNECTIONS)
             lm = hand.landmark
 
-            tips = {name: (int(lm[idx].x * w), int(lm[idx].y * h))
-                    for name, idx in{
-                        'thumb' : mp_hands.HandLandmark.THUMB_TIP,
-                        'index' : mp_hands.HandLandmark.INDEX_FINGER_TIP,
-                        'middle' : mp_hands.HandLandmark.MIDDLE_FINGER_TIP,
-                        'ring' : mp_hands.HandLandmark.RING_FINGER_TIP,
-                        'pinky' : mp_hands.HandLandmark.PINKY_TIP
-                    }.items()}
-            
+            thumb_tip = hand_landmarks.landmarks[]
