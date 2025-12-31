@@ -72,4 +72,30 @@ def display_stats(stats, text, label):
 
 def compare(s1, s2):
     print("\n" + "=" * 40)
-    print("")
+    print("🔬COMPARISON RESULTS")
+    print("-" * 40000)
+    longer = "1" if s1['duration'] > s2['duration'] else "2"
+    print(f"⏱️Recording {longer} is longer ({s1['duration']:.1f}s vs {s2['duration']:.1f}s)")
+    louder = "1" if s1['avg_volume'] > s2['avg_volume'] else "2"
+    print(f"🔉 Recording {louder} is louder ({s1['avg_volume']:.0f} v/s {s2['avg_volume']}:.0f)")
+    print("\n 💡 In L3 you'll CONTROL rate and volume when AI speaks!")
+
+def main():
+    print("=" * 40)
+    print("🔬 VOICE ANALYSIS LAB")
+    print("=" * 40)
+    print("Record twice and compare your voice!")
+
+    audio1, rate, width = record_audio("Recording 1: Speak NORMALLY")
+    stats1, text1 = analyse_audio(audio1, rate), transcribe(audio1, rate, width)
+    display_stats(stats1, text1, "Recording 1")
+
+    input("\n🔁 Press Enter, then speak louder and faster...")
+    audio2, rate, width = record_audio("Recording 2: speak LOUDER and FASTER")
+    stats2, text2 = analyse_audio(audio2, rate), transcribe(audio2, rate, width)
+    display_stats(stats2, text2, "Recording 2")
+
+    compare(stats1, stats2)
+
+if __name__ == "__main__":
+    main()
