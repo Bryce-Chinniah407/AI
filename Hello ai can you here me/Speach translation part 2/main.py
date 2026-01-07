@@ -40,13 +40,15 @@ def select_language():
     print("3/. Hindi")
     print("4/. German")
     print("5/. Russian")
+    print("6/. Japanese")
 
     return {
         "1": "fr",
         "2": "es",
         "3": "hi",
         "4": "de",
-        "5": "ru"
+        "5": "ru",
+        "6": "ja"
     }.get(input("Enter Choice: "), "hi")
 
 def main():
