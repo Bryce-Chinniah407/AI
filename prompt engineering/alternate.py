@@ -29,9 +29,8 @@ def silly_prompt():
     print("> Clarity & Specificity")
     print("> Contextual Information")
 
-    print("\n🟡 Step 1: Enter a vague prompt")
+    print("\n🟡 STEP 1: Enter a vague prompt")
     vague_prompt = input("> ")
-    
     print("\n🤖 AI Response (Vague Prompt):")
     print("-" * 40)
     print(generate_response(vague_prompt))
