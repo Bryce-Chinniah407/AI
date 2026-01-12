@@ -94,4 +94,23 @@ def main():
                 text = generate_text(prompt, max_new_tokens=40)
                 print(f"{Fore.GREEN}Description: {truncate_text(text, 30)}")
             except Exception as e:
-                print()
+                print(f"{Fore.RED}{e}")
+
+        elif choice == "3":
+            prompt = f"Summarize this image in exactly 50 words: {basic_caption}"
+            try:
+                text = generate_text(prompt, max_new_tokens=70)
+                print(f"{Fore.GREEN}Summary: {truncate_text(text, 50)}\n")
+
+            except Exception as e:
+                print(f"{Fore.RED}{e}")
+
+        elif choice == "4":
+            print(f"{Fore.GREEN}Goodbye!")
+            break
+
+        else:
+            print(f"{Fore.RED}Invalid choice.")
+
+if __name__ == "__main__":
+    main()
