@@ -5,7 +5,7 @@ from google.genai import types
 
 import time
 
-GEMINI_API_KEY = "AIzaSyCbQm5xHdMhzs1V3nMk_ZyOJA3ZLv4FVBs"
+GEMINI_API_KEY = ""
 
 def generate_response(prompt, temperature=0.5):
     model_id = "gemini-2.0-flash"
