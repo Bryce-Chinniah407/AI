@@ -24,7 +24,7 @@ def get_basic_caption(image, model="nlpconnect/vit-gpt2-image-captioning"):
     image.save(buffered, format="JPEG")
     buffered.seek(0)
 
-    headers = {"Authorization": f"Bearer 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"}
+    headers = {"Authorization": f"Bearer "}
     response = requests.post(api_url, headers=headers, data=buffered.getvalue())
 
     if response.status_code != 200:

@@ -7,7 +7,7 @@ from colorama import init, Fore, Style
 init(autoreset=True)
 
 HF_HEADERS = {
-    "Athorization": f"Bearer "
+    "Athorization": f"Bearer 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"
 }
 
 def hf_post(api_url, *, data=None, json_payload=None):
