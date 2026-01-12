@@ -49,6 +49,7 @@ def select_language():
         "4": "de",
         "5": "ru",
         "6": "ja"
+        
     }.get(input("Enter Choice: "), "hi")
 
 def main():

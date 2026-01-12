@@ -44,13 +44,17 @@ def display_language_options():
     print("2. French(fr)")
     print("3. German(de)")
     print("4. Russian(ru)")
+    print("5. Hindi(hi)")
+    print("6. Japanese(ja)")
 
     choice = input("Please select the target language number(1-3): ")
     language_dict = {
         "1": "es",
         "2": "fr",
         "3": "de",
-        "4": "ru"
+        "4": "ru",
+        "5": "hi",
+        "6": "ja"
     }
 
     return language_dict.get(choice, "es")

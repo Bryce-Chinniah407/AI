@@ -7,7 +7,7 @@ from colorama import init, Fore, Style
 init(autoreset=True)
 
 HF_HEADERS = {
-    "Athorization": f"Bearer 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"
+    "Athorization": f"Bearer "
 }
 
 def hf_post(api_url, *, data=None, json_payload=None):
@@ -93,4 +93,46 @@ def main():
         try:
             image = Image.open(image_path)
         except Exception as e:
-            print(f)
+            print(f"{Fore.REDE}Image open failed: {e}")
+            return
+        
+        basic_caption = get_basic_caption(image)
+        print(f"\n{Fore.YELLOW}Basic caption: {basic_caption}\n")
+
+        while True:
+            print_menu()
+            choice = input(f"{Fore.CYAN}Choice (1-4): {Style.RESET_ALL}").strip()
+
+            if choice == "1":
+                print(force_word_count(basic_caption, 5))
+
+            elif choice == "2":
+                prompt = (
+                    "Write a description of exactly 30 words. "
+                    "Do not use more or fewer words."
+                    f"Caption: {basic_caption}"
+                )
+                text = generate_text(prompt, max_new_tokens=50)
+                print(force_word_count(text, 30))
+
+            elif choice == "3":
+                prompt = (
+                    "Write a summary of exactly 50 words. "
+                    "Do not use more or fewer words."
+                    f"Caption: {basic_caption}"
+                )
+                text = generate_text(prompt, max_new_tokens=80)
+                print(force_word_count(text, 50))
+
+            elif choice == "4":
+                print(f"{Fore.GREEN}Goodbye!")
+                break
+            
+            else:
+                print(f"{Fore.RED}Invalid choice")
+
+    except KeyboardInterrupt:
+        print(f"\n{Fore.RED}Interrupted by user. Exiting.")
+
+if __name__ == "__main__":
+    main()
