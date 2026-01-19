@@ -72,4 +72,7 @@ def main():
     with open(path, "rb") as fh: by = fh.read()
     try: dets = infer(path, by)
     except Exception as e: return print("❌", e)
-    
+    img = Image.open(io.BytesIO(by)).convert("RGB")
+    counts = draw(img, dets, thr=0.5)
+    out = f"annotated_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
+    img.save(out);print
