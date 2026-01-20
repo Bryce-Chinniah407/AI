@@ -1,6 +1,6 @@
 import openai
 
-client = openai.OpenAI(api_key="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")
+client = openai.OpenAI(api_key="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")
 
 def generate_response(prompt, temperature=0.3):
     try:
