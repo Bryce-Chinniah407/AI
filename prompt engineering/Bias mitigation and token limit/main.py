@@ -1,6 +1,6 @@
 from openai import OpenAI
 
-client = OpenAI(api_key="")
+client = OpenAI(api_key="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")
 
 def generate_response(prompt, temperature=0.3):
     try:
