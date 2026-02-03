@@ -1,8 +1,8 @@
 import streamlit as st
-from openai import Openai
+from openai import OpenAI
 import io
 
-client = Openai(api_key="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")
+client = OpenAI(api_key="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")
 
 def generate_response(prompt: str, temperature: float = 0.1) -> str:
     try:
@@ -82,7 +82,7 @@ def setup_ui():
         if submitted and user_input.strip():
             enhanced_prompt = f"[{difficulty} Level] {user_input.strip()}"
 
-            with st.spiner("Solving your math problem..."):
+            with st.spinner("Solving your math problem..."):
                 response = generate_response(enhanced_prompt)
 
             st.session_state.history.insert(0, {
